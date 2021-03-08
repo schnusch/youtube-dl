@@ -24,13 +24,13 @@ class AparatCamIE(InfoExtractor):
         webpage = self._download_webpage(url, video_id)
 
         video = self._parse_json(
-            self._html_search_regex(r'src:\s*(?P<data>"(?:[^\\"]|\\.)*")',
+            self._html_search_regex(r'sources:\s*\[\s*\{\s*file:\s*(?P<data>"(?:[^\\"]|\\.)*")',
                                     webpage, 'video', group='data'),
             video_id)
 
         try:
             poster = self._parse_json(
-                self._html_search_regex(r'poster:\s*(?P<data>"(?:[^\\"]|\\.)*")',
+                self._html_search_regex(r'image:\s*(?P<data>"(?:[^\\"]|\\.)*")',
                                         webpage, 'poster', group='data'),
                 video_id)
         except ValueError:
