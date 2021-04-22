@@ -2,9 +2,8 @@ from __future__ import unicode_literals
 
 from .common import InfoExtractor
 
-
 class AparatCamIE(InfoExtractor):
-    _VALID_URL = r'https?://aparat.cam/(?P<id>[^/?#]+)'
+    _VALID_URL = r'https?://(?:aparat\.cam|wolfstream\.tv)/(?P<id>[^/?#]+)'
     _TESTS = [{
         'url': 'https://aparat.cam/n4d6dh0wvlpr',
         'md5': '825e761f785b60b71b0b197db97a3a40',
